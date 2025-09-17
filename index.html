@@ -252,7 +252,7 @@
         </div>
         </div>
 
-            <form id="contactForm" class="contact-form fade-in delay-1">
+            <form id="contactForm" onsubmit="event.preventDefault();" class="contact-form fade-in delay-1">
                 <input type="text" placeholder="Name" required>
                 <input type="email" placeholder="Email" required>
                 <textarea placeholder="Message" required></textarea>
