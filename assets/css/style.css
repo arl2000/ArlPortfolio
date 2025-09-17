@@ -954,3 +954,77 @@ section {
 
 /* Anchor offset for sticky header */
 :target { scroll-margin-top: 80px; }
+
+/* Small mobile (target 432x932 and similar) */
+@media (max-width: 432px) {
+    :root { --section-pad-y: 36px; }
+
+    /* Navigation: show hamburger, compact spacing */
+    .navbar { padding: 0.6rem 1rem; }
+    .nav-brand { font-size: 1.125rem; }
+    .nav-toggle { display: flex; }
+    .nav-menu { display: none; }
+    .nav-menu.active { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.75rem 1rem; }
+
+    /* Hero: stack and scale down text and image */
+    .hero {
+        padding: 0 1rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        padding-top: calc(var(--section-pad-y) / 2 + 40px);
+        margin-top: 0;
+    }
+
+    .hero-content { max-width: 100%; text-align: center; }
+    .hero-content h1 { font-size: 1.8rem; line-height: 1.1; }
+    .hero-name, .hero-greeting { font-size: 1rem; }
+    .hero-content h2 { font-size: 1rem; margin-bottom: 1.25rem; }
+
+    .hero-image {
+        width: min(86vw, 260px);
+        border-radius: 12px;
+        margin-top: 0.5rem;
+    }
+
+    .hero__illustrations::before,
+    .hero__illustrations::after { display: none; }
+
+    /* CTA and buttons: full width-ish and touch-friendly */
+    .cta-button { padding: 0.9rem 1.25rem; width: 92%; max-width: 360px; }
+    .submit-button { width: 100%; }
+
+    /* Sections spacing and titles */
+    .section-title { font-size: 1.5rem; margin-bottom: 1.25rem; }
+    section { padding: clamp(28px, 6vw, 48px) 1rem; }
+
+    /* Grids become single column */
+    .projects-grid, .certificates-grid, .skills-grid, .skills-container {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .project-card, .certificate-card, .skill-category-card, .education-item, .experience-item {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    /* Contact form stacked and full width inputs */
+    .contact-content { grid-template-columns: 1fr; gap: 1rem; }
+    .contact-form input, .contact-form textarea { width: 100%; }
+
+    /* Certificate modal: make image full-width and tall enough */
+    .certificate-modal-content { max-width: 96%; max-height: 84vh; border-radius: 8px; }
+    .certificate-close { top: 12px; right: 18px; font-size: 32px; }
+
+    /* Social icons touch size */
+    .social-links a img { width: 46px; height: 46px; }
+
+    /* Footer padding */
+    .footer { padding: 1.25rem; }
+
+    /* Reduce hero status size */
+    .hero__status { padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+}
